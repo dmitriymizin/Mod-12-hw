@@ -17,7 +17,7 @@ class TournamentTest(unittest.TestCase):
         for key, result in cls.all_results.items():
             print(f'{key}:{result}')
 
-    def test_tournament(self):
+    def test_tournament1(self):
         t1 = runner_and_tournament.Tournament(90, self.run1, self.run3)
         results = t1.start()
         self.all_results['test_tournament1'] = results
@@ -25,6 +25,7 @@ class TournamentTest(unittest.TestCase):
         last_run = results[last_place]
         self.assertTrue(last_run == self.run3)
 
+    def test_tournament2(self):
         t2 = runner_and_tournament.Tournament(90, self.run2, self.run3)
         results = t2.start()
         self.all_results['test_tournament2'] = results
@@ -38,7 +39,7 @@ class TournamentTest(unittest.TestCase):
         self.assertTrue(first_run == self.run2)
         self.assertTrue(last_run == self.run3)
 
-
+    def test_tournament3(self):
         t3 = runner_and_tournament.Tournament(90, self.run1, self.run2, self.run3)
         results = t3.start()
         self.all_results['test_tournament3'] = results
